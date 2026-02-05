@@ -286,9 +286,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Homemade Development Team**
 
-- Lead Developer: [Your Name]
-- Environmental Consultants: Carbon Trust (UK)
-- Technical Reviewers: University Environmental Science Dept.
+- Interaction Tecnology Intern: Rajayogi Nandina
+- Technical Reviewers: Nijs (Lead Developer)
 
 ---
 
@@ -305,6 +304,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Expo team for the amazing framework
 - React Native community
 - EPA and DEFRA for emission data
+- Wakil Homemade founder
 - All contributors and testers
 
 ---
