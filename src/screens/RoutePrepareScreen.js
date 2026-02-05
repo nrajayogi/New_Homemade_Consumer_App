@@ -38,8 +38,8 @@ export default function RoutePrepareScreen() {
     // Filter items for this restaurant only
     const restaurantItems = cartItems.filter(item => item.restaurantName === chefName);
     const subtotal = restaurantItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-    const taxes = 12.50; // Fixed for now
-    let deliveryPrice = orderType === 'delivery' ? 12.50 : 0.00;
+    const taxes = subtotal * 0.05; // 5% tax instead of fixed 12.50
+    let deliveryPrice = orderType === 'delivery' ? 2.50 : 0.00; // 2.50 delivery fee instead of 12.50
 
     // Discount Calculation
     let discountAmount = 0;
@@ -257,7 +257,7 @@ export default function RoutePrepareScreen() {
                                         <Feather name="trash-2" size={18} color="#FF4444" />
                                     </TouchableOpacity>
                                 </View>
-                                <Text style={styles.itemSub}>Choice of: Garlic sauce, Homemade sauce</Text>
+                                <Text style={styles.itemSub}>{item.description || "Default preparation"}</Text>
                                 <View style={styles.itemBottomRow}>
                                     <Text style={styles.itemPrice}>{item.price.toFixed(2)}€</Text>
                                     <QuantityControl item={item} />
@@ -314,8 +314,8 @@ export default function RoutePrepareScreen() {
                 <View style={styles.billRow}>
                     <Text style={styles.billLabel}>Delivery Price</Text>
                     <Text style={styles.billValue}>
-                        {deliveryPrice === 0 && orderType === 'delivery' ? <Text style={{ color: 'green', textDecorationLine: 'line-through' }}>12.50 €</Text> : null}
-                        {orderType === 'delivery' && deliveryPrice > 0 ? "12.50 €" : "0.00 €"}
+                        {deliveryPrice === 0 && orderType === 'delivery' ? <Text style={{ color: 'green', textDecorationLine: 'line-through' }}>2.50 €</Text> : null}
+                        {orderType === 'delivery' && deliveryPrice > 0 ? "2.50 €" : "0.00 €"}
                     </Text>
                 </View>
                 {/* Discount Row */}

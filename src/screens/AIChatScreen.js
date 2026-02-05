@@ -6,6 +6,9 @@ import {
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Ionicons } from '@expo/vector-icons';
 
+// CONFIG: Update this URL to your server IP for physical device
+const API_BASE_URL = 'http://localhost:5002';
+
 export default function AIChatScreen({ navigation }) {
     const [messages, setMessages] = useState([
         { id: '1', text: "Hi! I'm your Homemade AI Assistant. 🥗 How can I help you eat well today?", sender: 'ai' }
@@ -24,8 +27,7 @@ export default function AIChatScreen({ navigation }) {
 
         try {
             // API Call to NLP Backend
-            // NOTE: Update URL to your server IP for physical device
-            const response = await fetch('http://localhost:5002/api/nlp/chat', {
+            const response = await fetch(`${API_BASE_URL}/api/nlp/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

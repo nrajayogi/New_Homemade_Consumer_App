@@ -10,23 +10,13 @@ import { LinearGradient } from 'expo-linear-gradient'; // Ensure this is install
 
 import { useCart } from '../context/CartContext';
 import CartToast from '../components/CartToast';
+import { MOCK_CHEFS, CATEGORY_IMAGES, MOCK_MENU } from '../data/mockData';
 import SmartImage from '../components/SmartImage';
 
 const { width } = Dimensions.get('window');
 
 // --- MOCK DATA ---
-const FEATURED_ITEMS = [ // Compact Carousel
-    { id: 'f1', type: 'food', name: 'Jerk Drums', price: 10.00, dietary: 'non-veg', image: 'https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?q=80&w=1000' },
-    { id: 'f2', type: 'food', name: 'Veggie Bowl', price: 8.50, dietary: 'veg', image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1000' },
-    { id: 'f3', type: 'food', name: 'Spicy Wrap', price: 9.00, dietary: 'non-veg', image: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1000' }
-];
-
-const MAIN_MENU_ITEMS = [ // Vertical/Horizontal List
-    { id: '1', name: 'Jerk Chicken with Rice', description: 'Choice of: Garlic sauce, Homemade sauce. Spicy and tender.', price: 10.00, dietary: 'non-veg', meta: '23 mins • 5 km', cardStyle: 'horizontal', image: 'https://images.unsplash.com/photo-1594221708779-91b404d7c07c?q=80&w=1000' },
-    { id: '2', name: 'Smoked BBQ Ribs', description: 'Slow cooked pork ribs with a sticky honey glaze.', price: 14.50, dietary: 'non-veg', meta: '35 mins • 5 km', cardStyle: 'vertical', image: 'https://images.unsplash.com/photo-1544025162-d76690b67f11?q=80&w=1000' },
-    { id: '3', name: 'Caribbean Curry Goat', description: 'Traditional goat curry with potatoes and spices.', price: 12.00, dietary: 'non-veg', meta: '30 mins • 5 km', cardStyle: 'horizontal', image: 'https://images.unsplash.com/photo-1565557623262-b51c2513a641?q=80&w=1000' },
-    { id: '4', name: 'Vegan Rasta Pasta', description: 'Creamy coconut pasta with colorful bell peppers.', price: 9.50, dietary: 'vegan', meta: '15 mins • 5 km', cardStyle: 'horizontal', image: 'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?q=80&w=1000' }
-];
+// FEATURED_ITEMS and MAIN_MENU_ITEMS are now imported from MOCK_MENU
 
 // --- COMPONENTS ---
 
@@ -64,7 +54,7 @@ const MenuCardCompact = ({ item, restaurantName }) => {
             </View>
             <View style={styles.contentCompact}>
                 <Text style={styles.itemTitleCompact} numberOfLines={1}>{item.name}</Text>
-                <Text style={styles.itemDescCompact}>Choice of: Sauce...</Text>
+                <Text style={styles.itemDescCompact}>{item.description || "Freshly prepared"}</Text>
                 <View style={styles.footerCompact}>
                     <Text style={styles.priceCompact}>{item.price.toFixed(2)}€</Text>
                     <QuantityControl
@@ -181,13 +171,11 @@ export default function OrderScreen() {
     const { getCartCount } = useCart();
     const [activeTab, setActiveTab] = useState('Menu');
 
-    // Get restaurant data with fallback
-    const restaurant = route.params?.restaurant || {
-        name: "Enrico's Caribbean Cuisine",
-        minOrder: 10,
-        deliveryFee: 2.50,
-        coverImage: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=1000'
-    };
+    // Get restaurant data with dynamic menu fetching
+    const restaurant = route.params?.restaurant || MOCK_CHEFS[0];
+    const restaurantMenu = MOCK_MENU[restaurant.id] || { featured: [], main: [] };
+    const featuredItems = restaurantMenu.featured;
+    const mainMenu = restaurantMenu.main;
 
     const MenuItemWrapper = ({ item, restaurantName }) => {
         if (item.cardStyle === 'vertical') return <MenuCardVertical item={item} restaurantName={restaurantName} />;
@@ -256,7 +244,7 @@ export default function OrderScreen() {
 
             <SectionHeader title="Chef's Specials" />
             <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.carouselContent}>
-                {FEATURED_ITEMS.map(item => <MenuCardCompact key={item.id} item={item} restaurantName={restaurant.name} />)}
+                {featuredItems.map(item => <MenuCardCompact key={item.id} item={item} restaurantName={restaurant.name} />)}
             </ScrollView>
 
             <SectionHeader title="Most Popular" />
@@ -269,7 +257,7 @@ export default function OrderScreen() {
             <Header onBack={() => navigation.goBack()} title={restaurant.name} />
 
             <FlatList
-                data={MAIN_MENU_ITEMS}
+                data={mainMenu}
                 keyExtractor={item => item.id}
                 renderItem={({ item }) => <MenuItemWrapper item={item} restaurantName={restaurant.name} />}
                 ListHeaderComponent={renderHeader}

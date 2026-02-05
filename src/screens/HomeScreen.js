@@ -201,19 +201,36 @@ export default function HomeScreen({ navigation }) {
 
     const checkLocation = async () => {
         setIsLocating(true);
-        let { status } = await Location.requestForegroundPermissionsAsync();
-        if (status !== 'granted') {
-            setLocationText('Location denied');
-            setIsLocating(false);
-            return;
-        }
-        let location = await Location.getCurrentPositionAsync({});
-        if (location) {
-            setTimeout(() => {
-                setLocationText('123 Culinary Ave, Food City');
+        try {
+            let { status } = await Location.requestForegroundPermissionsAsync();
+            if (status !== 'granted') {
+                setLocationText('Location denied');
                 setIsLocating(false);
-                triggerNotification('Welcome', 'Found active kitchens near you.', 'success');
-            }, 1000);
+                return;
+            }
+
+            let location = await Location.getCurrentPositionAsync({ accuracy: Location.Accuracy.Balanced });
+            if (location) {
+                // Try reverse geocoding to get a real address
+                const [address] = await Location.reverseGeocodeAsync({
+                    latitude: location.coords.latitude,
+                    longitude: location.coords.longitude
+                });
+
+                if (address) {
+                    const formattedAddress = `${address.street || ''} ${address.name || ''}, ${address.city || ''}`.trim().replace(/^,/, '');
+                    setLocationText(formattedAddress || `${location.coords.latitude.toFixed(4)}, ${location.coords.longitude.toFixed(4)}`);
+                } else {
+                    setLocationText(`${location.coords.latitude.toFixed(4)}, ${location.coords.longitude.toFixed(4)}`);
+                }
+
+                triggerNotification('Location Updated', 'Found active kitchens near you.', 'success');
+            }
+        } catch (error) {
+            console.error("Location error:", error);
+            setLocationText('Error fetching location');
+        } finally {
+            setIsLocating(false);
         }
     };
 
@@ -426,7 +443,20 @@ export default function HomeScreen({ navigation }) {
                 </View>
             </ScrollView>
 
-            <CartToast count={getCartCount()} onPress={() => navigation.navigate('RoutePrepare', { chefName: "Enrico's Caribbean Cuisine", restaurantImage: 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=1000' })} />
+            <CartToast
+                count={getCartCount()}
+                onPress={() => {
+                    if (cartItems.length > 0) {
+                        const firstItem = cartItems[0];
+                        navigation.navigate('RoutePrepare', {
+                            chefName: firstItem.restaurantName,
+                            restaurantImage: firstItem.restaurantImage || 'https://images.unsplash.com/photo-1556910103-1c02745a30bf?q=80&w=1000'
+                        });
+                    } else {
+                        Alert.alert("Empty Cart", "Add some items to your cart first!");
+                    }
+                }}
+            />
 
             {/* AI Assistant FAB */}
             <TouchableOpacity
