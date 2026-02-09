@@ -262,7 +262,7 @@ Comprehensive technical documentation is available in the [`technical_documentat
 
 ---
 
-## 👥 Team
+##  Team
 
 **Homemade Development Team**
 
@@ -271,7 +271,7 @@ Comprehensive technical documentation is available in the [`technical_documentat
 
 ---
 
-## 📧 Contact
+##  Contact
 
 - **GitHub**: [@nrajayogi](https://github.com/nrajayogi)
 - **Repository**: [New_Homemade_Consumer_App](https://github.com/nrajayogi/New_Homemade_Consumer_App)
