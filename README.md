@@ -1,4 +1,4 @@
-# 🌱 Homemade Consumer App
+#  Homemade Consumer App
 
 **Sustainable Food Delivery with Carbon Credit Rewards**
 
@@ -10,23 +10,23 @@ A React Native mobile application that rewards users with carbon credits for cho
 
 ---
 
-## 📱 Overview
+## Overview
 
 Homemade Consumer App is an innovative food delivery platform that incentivizes sustainable transportation choices. Users earn **carbon credits** by delivering or receiving orders via bike, walking, or public transport instead of personal vehicles.
 
 ### Key Features
 
-- 🚴 **Eco-Friendly Deliveries**: Choose bike, walk, or bus for your deliveries
-- 🌍 **Carbon Credit Rewards**: Earn credits for every gram of CO₂ saved
-- 📸 **AI Verification**: Photo-based proof of eco-friendly transport
-- 🏆 **Achievements System**: Unlock badges and milestones
-- 🛒 **Smart Cart**: Persistent shopping cart with abandoned cart notifications
-- 🔔 **Custom Notifications**: Unique sounds and haptic feedback
-- 📊 **Impact Tracking**: Monitor your environmental contribution
+-  **Eco-Friendly Deliveries**: Choose bike, walk, or bus for your deliveries
+-  **Carbon Credit Rewards**: Earn credits for every gram of CO₂ saved
+-  **AI Verification**: Photo-based proof of eco-friendly transport
+-  **Achievements System**: Unlock badges and milestones
+-  **Smart Cart**: Persistent shopping cart with abandoned cart notifications
+-  **Custom Notifications**: Unique sounds and haptic feedback
+-  **Impact Tracking**: Monitor your environmental contribution
 
 ---
 
-## 🎯 How It Works
+##  How It Works
 
 ```
 1. Browse Restaurants → 2. Add to Cart → 3. Choose Eco-Mode
@@ -49,7 +49,7 @@ Homemade Consumer App is an innovative food delivery platform that incentivizes 
 
 ---
 
-## 🏗️ Technical Stack
+##  Technical Stack
 
 ### Frontend
 
@@ -74,7 +74,7 @@ Homemade Consumer App is an innovative food delivery platform that incentivizes 
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 New_Homemade_Consumer_App/
@@ -108,7 +108,7 @@ New_Homemade_Consumer_App/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -148,7 +148,7 @@ APK location: `android/app/build/outputs/apk/debug/app-debug.apk`
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 Comprehensive technical documentation is available in the [`technical_documentation/`](./technical_documentation/) folder:
 
@@ -160,11 +160,9 @@ Comprehensive technical documentation is available in the [`technical_documentat
 | [Carbon Credits](./technical_documentation/04_Carbon_Credit_Calculation.md) | CO₂ formulas, scientific references | 7+ |
 | [Speed Validation](./technical_documentation/05_Speed_Determination_Validation.md) | GPS tracking, fraud detection | 7+ |
 
-**Total**: 33+ pages of detailed technical documentation
-
 ---
 
-## 🌟 Features in Detail
+##  Features in Detail
 
 ### 1. Rewards System
 
@@ -175,10 +173,10 @@ Comprehensive technical documentation is available in the [`technical_documentat
   - Achievements: Up to +500 credits
 
 - **Achievements**:
-  - 🚀 First Steps (1st order)
-  - 🌱 Eco Warrior (10 eco-trips)
-  - ☁️ Carbon Saver (10kg CO₂ saved)
-  - 🔥 Week Warrior (7-day streak)
+  -  First Steps (1st order)
+  -  Eco Warrior (10 eco-trips)
+  -  Carbon Saver (10kg CO₂ saved)
+  -  Week Warrior (7-day streak)
 
 ### 2. Eco-Proof Verification
 
@@ -196,7 +194,7 @@ Comprehensive technical documentation is available in the [`technical_documentat
 
 ---
 
-## 📊 Carbon Impact
+##  Carbon Impact
 
 ### Emission Baselines (Scientific Sources)
 
@@ -222,7 +220,7 @@ Comprehensive technical documentation is available in the [`technical_documentat
 
 ---
 
-## 🔬 Scientific References
+## Scientific References
 
 1. **EPA (2024)**: [Greenhouse Gas Emissions from Typical Passenger Vehicle](https://www.epa.gov/greenvehicles)
 2. **DEFRA (2023)**: [Greenhouse Gas Reporting Conversion Factors](https://www.gov.uk/government/publications/greenhouse-gas-reporting-conversion-factors-2023)
@@ -231,7 +229,7 @@ Comprehensive technical documentation is available in the [`technical_documentat
 
 ---
 
-## 🛣️ Roadmap
+##  Roadmap
 
 ### ✅ Phase 1 (Current - v1.0.0)
 
@@ -241,44 +239,26 @@ Comprehensive technical documentation is available in the [`technical_documentat
 - [x] Achievements and stats tracking
 - [x] Custom notifications
 
-### 🔄 Phase 2 (Q2 2026)
+###  Phase 2 (Q2 2026)
 
 - [ ] TensorFlow Lite ML model for transport detection
-- [ ] GPS-based speed validation
+- [x] GPS-based speed validation
 - [ ] Backend API integration
 - [ ] User authentication
 
-### 🔮 Phase 3 (Q3 2026)
+###  Phase 3 (Q3 2026)
 
-- [ ] Real-time order tracking
+- [x] Real-time order tracking
 - [ ] Payment gateway integration
-- [ ] Social features (leaderboards)
+- [x] Social features (leaderboards)
 - [ ] Carbon credit marketplace
 
-### 🚀 Phase 4 (Q4 2026)
+###  Phase 4 (Q4 2026)
 
 - [ ] Blockchain-based carbon credits
 - [ ] Corporate partnerships
 - [ ] Multi-city expansion
 - [ ] iOS version
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
@@ -299,7 +279,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Expo team for the amazing framework
 - React Native community
@@ -309,18 +289,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📸 Screenshots
+##  Quick Links
 
-> *Screenshots coming soon*
-
----
-
-## ⚡ Quick Links
-
-- [📚 Technical Documentation](./technical_documentation/)
-- [🐛 Report Bug](https://github.com/nrajayogi/New_Homemade_Consumer_App/issues)
-- [💡 Request Feature](https://github.com/nrajayogi/New_Homemade_Consumer_App/issues)
-- [📖 API Documentation](./technical_documentation/02_System_Architecture.md)
+- [ Technical Documentation](./technical_documentation/)
+- [ Report Bug](https://github.com/nrajayogi/New_Homemade_Consumer_App/issues)
+- [ Request Feature](https://github.com/nrajayogi/New_Homemade_Consumer_App/issues)
+- [ API Documentation](./technical_documentation/02_System_Architecture.md)
 
 ---
 
