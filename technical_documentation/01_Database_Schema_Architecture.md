@@ -522,14 +522,6 @@ async function restoreFromBackup(backup) {
 
 ---
 
-## Future Enhancements
-
-1. **Cloud Sync**: Sync data to backend server
-2. **Offline Queue**: Queue operations for later sync
-3. **Data Compression**: Compress large datasets
-4. **Encryption**: Encrypt sensitive fields
-5. **Relational DB**: Migrate to SQLite for complex queries
-
 ---
 
 *Document Version: 1.0.0*  
