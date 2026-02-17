@@ -529,41 +529,6 @@ class CVService {
     return tensor;
   }
 }
-```
-
----
-
-## 8. Future Enhancements
-
-### Phase 2: ML Model Deployment
-
-**Timeline**: Q2 2026  
-**Goals**:
-
-- Deploy TensorFlow Lite model
-- Achieve >90% accuracy
-- <200ms inference time
-
-### Phase 3: Advanced Features
-
-**Timeline**: Q3 2026  
-**Features**:
-
-1. **GPS Verification**: Cross-reference photo location with trip route
-2. **Speed Analysis**: Verify speed matches claimed mode
-3. **Weather Context**: Account for weather conditions
-4. **Multi-frame Verification**: Analyze video clips instead of single photos
-5. **Blockchain Proof**: Immutable verification records
-
-### Phase 4: Federated Learning
-
-**Timeline**: Q4 2026  
-**Goals**:
-
-- Train model on-device with user data
-- Preserve privacy (no data leaves device)
-- Continuous improvement
-
 ---
 
 *Document Version: 1.0.0*  
