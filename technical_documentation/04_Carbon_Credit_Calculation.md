@@ -515,26 +515,6 @@ Formulas reviewed by:
 
 ---
 
-## Future Enhancements
-
-### Phase 2: Advanced Calculations
-
-1. **Dynamic Baselines**: Adjust for user's actual car (if known)
-2. **Route Optimization**: Account for actual route taken
-3. **Weather Factors**: Adjust for wind resistance, temperature
-4. **Lifecycle Emissions**: Include manufacturing, maintenance
-
-### Phase 3: Real-Time Data
-
-1. **Traffic Conditions**: Higher savings in congested areas
-2. **Grid Carbon Intensity**: Adjust e-bike emissions by time/location
-3. **Seasonal Variations**: Account for heating/cooling
-
-### Phase 4: Blockchain Verification
-
-1. **Immutable Records**: Carbon credits on blockchain
-2. **Tradeable Credits**: Sell/trade credits on marketplace
-3. **Corporate Partnerships**: Companies offset emissions by buying user credits
 
 ---
 
