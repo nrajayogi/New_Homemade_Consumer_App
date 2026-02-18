@@ -6,7 +6,7 @@
 [![Platform](https://img.shields.io/badge/platform-Android-green.svg)](https://reactnative.dev/)
 [![License](https://img.shields.io/badge/license-MIT-orange.svg)](LICENSE)
 
-A React Native mobile application that rewards users with carbon credits for choosing eco-friendly transportation modes when ordering food delivery.
+A React Native mobile application that rewards users with carbon credits for choosing eco-friendly transportation modes when ordering food delivery. and the documentation in Github was done by AI.
 
 ---
 
